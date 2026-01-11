@@ -1,0 +1,282 @@
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+}
+
+/* Shared style */
+.font-open-sans {
+  font-family: "Open Sans", sans-serif;
+  font-optical-sizing: auto;
+}
+
+.logo h2 {
+  font-size: 45px;
+  font-weight: 900;
+  font-family: "Times New Roman", Times, serif;
+}
+
+.color-orange {
+  color: #fd6e0a;
+}
+
+.btn {
+  background-color: #fd6e0a;
+  border: none;
+  padding: 18px 35px;
+  border-radius: 7px;
+  color: white;
+  font-size: 20px;
+  font-weight: 600;
+  cursor: pointer;
+}
+
+.text-center {
+  text-align: center;
+}
+.section-heading {
+  max-width: 827px;
+  text-align: center;
+  margin: 0 auto;
+}
+
+.section-heading h2 {
+  font-size: 35px;
+  margin-bottom: 30px;
+}
+
+.section-heading p {
+  font-size: 18px;
+  color: #757575;
+  margin-bottom: 30px;
+  line-height: 30px;
+}
+
+/* main style */
+header {
+  background-color: #fff8f3;
+  padding-top: 50px;
+  background: url("./images/developer.png"), url(./images/header_bg.png),
+    #fff8f3;
+  background-position: top left 23px, bottom right;
+  background-repeat: no-repeat;
+  background-size: contain, 50%;
+}
+
+nav {
+  width: 71%;
+  max-width: 1140px;
+  margin: 0 auto;
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+}
+
+nav .menu {
+  display: flex;
+  list-style: none;
+  gap: 50px;
+  align-items: center;
+}
+
+nav .menu a {
+  font-size: 20px;
+  text-decoration: none;
+  color: #474747;
+}
+
+#banner {
+  margin: 47px 38px 0px 215px;
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+}
+
+#banner .banner-content {
+  max-width: 585px;
+}
+
+#banner .banner-content h2 {
+  font-size: 45px;
+  font-weight: 600;
+  color: #474747;
+  margin-bottom: 5px;
+}
+
+#banner .banner-content h1 {
+  font-size: 85px;
+  font-weight: bold;
+  color: #181818;
+  margin-bottom: 20px;
+}
+
+#banner .banner-content p {
+  font-size: 18px;
+  color: #757575;
+  line-height: 30px;
+  margin-bottom: 30px;
+}
+
+#banner .banner-image img {
+  max-width: 585px;
+  vertical-align: middle;
+}
+
+#about,
+#skills,
+#resume {
+  padding-top: 130px;
+}
+#about .about-container {
+  width: 71%;
+  max-width: 1140px;
+  margin: 0 auto;
+  text-align: center;
+  background-color: #fff8f3;
+  padding: 130px 155px;
+}
+
+#about .about-container .about-info {
+  display: flex;
+  justify-content: space-between;
+}
+
+.about-info .info-card p {
+  font-size: 20px;
+  line-height: 30px;
+  color: #757575;
+}
+
+.about-info .info-card h4 {
+  font-size: 20px;
+}
+
+#skills .skill-container {
+  width: 71%;
+  max-width: 1140px;
+  margin: 0 auto;
+  padding: 100px 150px;
+}
+
+.skill-container .skill-box {
+  display: flex;
+  gap: 25px;
+}
+
+.skill-box .skill-card {
+  padding: 30px;
+  max-width: 265px;
+  box-shadow: 0px 6px 45px 0 rgba(0, 0, 0, 0.527);
+  border-radius: 5px;
+}
+
+.skill-card img {
+  max-width: 45px;
+  margin-bottom: 30px;
+}
+
+.skill-card h3 {
+  font-size: 22px;
+  color: #181818;
+  margin-bottom: 20px;
+}
+
+.skill-card p {
+  font-size: 16px;
+  color: #757575;
+  line-height: 28px;
+}
+
+#resume .resume-container {
+  width: 71%;
+  max-width: 1140px;
+  margin: 113px auto 0;
+  display: flex;
+  justify-content: space-between;
+  gap: 25px;
+}
+
+.resume-container hr {
+  margin: 30px 0;
+}
+
+.resume-container .section-title {
+  color: #474747;
+  font-size: 30px;
+  margin-bottom: 30px;
+}
+
+.resume-card {
+  max-width: 510px;
+  margin-right: 45px;
+}
+
+.resume-card .card-title {
+  font-size: 25px;
+  font-weight: 700;
+  margin-bottom: 10px;
+  color: #474747;
+}
+
+.resume-card .card-info {
+  font-size: 18px;
+  font-weight: 600;
+  margin-bottom: 20px;
+  color: #757575;
+}
+
+.resume-card .card-text {
+  font-size: 15px;
+  line-height: 28px;
+  margin-bottom: 20px;
+  color: #757575;
+}
+
+footer {
+  margin-top: 130px;
+  background-color: #fff8f3;
+  padding: 130px 0;
+}
+
+footer .footer-container {
+  width: 71%;
+  max-width: 1140px;
+  margin: 0 auto;
+  display: flex;
+  justify-content: space-around;
+  gap: 115px;
+}
+
+.footer-container h2 {
+  color: #181818;
+  font-size: 35px;
+  margin-bottom: 20px;
+}
+
+.footer-container .social {
+  max-width: 560px;
+}
+
+.footer-container .social p {
+  font-size: 16px;
+  color: #474747;
+  line-height: 25px;
+  margin-bottom: 30px;
+}
+
+.footer-container .icons a {
+  margin-right: 25px;
+}
+
+.footer-container form input[type="text"],
+.footer-container form input[type="email"],
+textarea {
+  width: 460px;
+  padding: 18px 32px;
+  margin-bottom: 24px;
+  border: none;
+  border-radius: 5px;
+  color: #757575;
+  font-size: 18px;
+  box-shadow: 0px 5px 25px 5px rgba(0, 0, 0, 0.527);
+}
