@@ -1,0 +1,517 @@
+* {
+  margin: 0;
+  padding: 0;
+}
+
+body {
+  height: 100vh;
+  width: 100%;
+}
+
+.btn {
+  background-color: #e55473;
+  color: white;
+  padding: 15px 30px;
+  border: 0;
+  border-radius: 5px;
+  font-size: 18px;
+  cursor: pointer;
+}
+
+.container {
+  max-width: 1440px;
+  margin: 0 auto;
+}
+
+/* Header Section */
+header {
+  background-color: #e997a920;
+}
+
+header .navbar {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  padding: 15px 0;
+}
+
+.navbar h1 {
+  font-size: 60px;
+  font-weight: 700;
+  letter-spacing: -5px;
+}
+
+.navbar span {
+  color: #e55473;
+}
+
+/* banner section */
+.banner {
+  display: flex;
+  gap: 30px;
+  justify-content: space-between;
+  align-items: center;
+  padding: 50px 0;
+}
+
+.banner .banner-details {
+  display: flex;
+  gap: 25px;
+  flex-direction: column;
+  align-items: flex-start;
+  max-width: 600px;
+}
+
+.banner-details .banner-title {
+  font-size: 75px;
+  font-weight: 700;
+}
+
+.banner-details .banner-description {
+  font-size: 1.2rem;
+  max-width: 500;
+  color: rgba(0, 0, 0, 0.586);
+}
+
+.banner-image {
+  width: 500px;
+}
+
+.banner-image img {
+  width: 100%;
+}
+
+/* Feature section */
+
+.feature {
+  display: flex;
+  gap: 50px;
+  flex-direction: column;
+  padding-top: 120px;
+}
+
+.feature .feature-details {
+  display: flex;
+  gap: 20px;
+  flex-direction: column;
+  max-width: 500px;
+  align-items: center;
+  margin: 0 auto;
+}
+
+.feature-details .feature-title {
+  font-size: 32px;
+  font-weight: 600;
+}
+
+.feature-details .feature-description {
+  font-size: 16px;
+  color: rgba(0, 0, 0, 0.735);
+  text-align: center;
+}
+
+.feature-cards {
+  display: grid;
+  grid-template-columns: repeat(3, 1fr);
+  grid-template-rows: repeat(1, 1fr);
+  gap: 30px;
+}
+
+.feature-card {
+  display: flex;
+  gap: 20px;
+  flex-direction: column;
+  justify-content: space-between;
+  align-items: center;
+}
+
+.feature-flower {
+  display: flex;
+  justify-content: center;
+  align-items: flex-end;
+  height: 100%;
+  width: 100%;
+  margin: 0 auto;
+  border-top-left-radius: 50%;
+  border-top-right-radius: 50%;
+}
+
+.feature-flower img {
+  height: 80%;
+}
+
+.feature-card:nth-child(1) .feature-flower {
+  background-color: #e5547366;
+}
+
+.feature-card:nth-child(2) .feature-flower {
+  background-color: #05966864;
+}
+
+.feature-card:nth-child(3) .feature-flower {
+  background-color: #ddf63b75;
+}
+
+.feature-card a {
+  color: black;
+  font-size: 20px;
+  font-weight: 600;
+}
+
+/* Delivery Section */
+.delivery {
+  display: flex;
+  gap: 30px;
+  justify-content: space-evenly;
+  background-color: rgba(0, 0, 0, 0.128);
+  margin-top: 120px;
+  margin-bottom: 100px;
+  border-radius: 5px;
+}
+
+.delivery-card {
+  display: flex;
+  gap: 20px;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+  padding: 45px 0;
+}
+
+.delivery-card p {
+  font-size: 20px;
+  color: rgb(69, 69, 69);
+}
+
+/* deal section */
+.deal {
+  background-color: #ff9fb420;
+}
+
+.deal-container {
+  display: flex;
+  gap: 50px;
+  justify-content: space-around;
+  align-items: center;
+  padding: 70px 50px;
+}
+
+.deal-details {
+  display: flex;
+  gap: 20px;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+  max-width: 600px;
+}
+
+.deal-details .deal-title {
+  font-size: 40px;
+  font-weight: 900;
+  text-align: center;
+}
+
+.deal-title span {
+  color: #e55473;
+}
+
+.deal-details .deal-description {
+  text-align: center;
+  color: rgba(0, 0, 0, 0.735);
+  font-size: 18px;
+}
+
+.deal-image img {
+  width: 100%;
+}
+
+/* Instagram Section */
+.instagram {
+  margin-top: 120px;
+  margin-bottom: 100px;
+  display: flex;
+  gap: 50px;
+  flex-direction: column;
+}
+
+.instagram .instagram-details {
+  max-width: 600px;
+  margin: 0 auto;
+  display: flex;
+  gap: 20px;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+}
+
+.instagram-details .instagram-title {
+  font-size: 32px;
+  font-weight: 700;
+}
+
+.instagram-details .instagram-description {
+  color: rgba(0, 0, 0, 0.735);
+  font-size: 19px;
+  text-align: center;
+}
+
+.instagram-images {
+  display: grid;
+  gap: 20px;
+  grid-template-columns: repeat(4, 1fr);
+}
+
+/* Latest deals Section */
+.latest-deal {
+  background-image: url("../Flower Asset/Rectangle 9.png");
+  background-position: center;
+  background-size: cover;
+  display: flex;
+  gap: 25px;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+  padding: 70px 0;
+}
+
+.latest-deal h2 {
+  font-size: 45px;
+}
+
+.latest-deal p {
+  font-size: 20px;
+  color: rgba(0, 0, 0, 0.735);
+  margin-bottom: 20px;
+}
+
+.email {
+  width: 100%;
+  display: flex;
+  gap: 10px;
+  justify-content: center;
+  align-items: center;
+  margin: 0 auto;
+}
+
+.email input {
+  padding: 15px 30px;
+  width: 35%;
+  border: 0;
+  outline: 0;
+  border-radius: 5px;
+  color: black;
+  font-size: 18px;
+  box-shadow: 0px 4px 30px 5px rgba(98, 98, 98, 0.312);
+}
+
+/* Footer Section */
+footer {
+  background-color: black;
+  color: white;
+  margin-top: 100px;
+  padding: 80px 0;
+}
+
+.footer-container {
+  display: flex;
+  gap: 20px;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+}
+
+.footer-title {
+  font-size: 45px;
+}
+
+.footer-title span {
+  color: #e55473;
+}
+
+.footer-container .footer-description {
+  text-align: center;
+  font-size: 20px;
+  color: rgb(185, 185, 185);
+}
+
+/* Responsive For Mobile*/
+@media screen and (max-width: 576px) {
+  .navbar h1 {
+    font-size: 40px;
+  }
+
+  .btn {
+    padding: 12px 25px;
+    font-size: 16px;
+  }
+
+  .navbar {
+    margin: 0 15px;
+  }
+
+  .banner,
+  .feature,
+  .delivery,
+  .deal-container,
+  .instagram,
+  .email {
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    margin: 10px 15px;
+  }
+
+  .banner {
+    padding: 10px 0;
+  }
+
+  .banner-details .banner-title {
+    font-size: 45px;
+    text-align: center;
+  }
+
+  .banner-details .banner-description {
+    font-size: 16px;
+    text-align: center;
+  }
+
+  .banner-details button {
+    margin: 0 auto;
+  }
+
+  .banner-image {
+    max-width: 400px;
+  }
+
+  .feature,
+  .instagram {
+    padding: 20px;
+  }
+  .feature-cards {
+    grid-template-columns: repeat(1, 1fr);
+  }
+
+  .delivery {
+    background-color: transparent;
+    gap: 0px;
+  }
+
+  .instagram-images {
+    grid-template-columns: repeat(1, 1fr);
+  }
+
+  .latest-deal h2,
+  .footer-title {
+    font-size: 36px;
+  }
+
+  footer {
+    margin-top: 20px;
+  }
+}
+
+/* Responsive fo Tablet */
+@media screen and (min-width: 577px) and (max-width: 768px) {
+  .navbar {
+    margin: 0 15px;
+  }
+
+  .banner,
+  .feature,
+  .delivery,
+  .deal-container,
+  .instagram {
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    margin: 10px 15px;
+  }
+
+  .banner-details .banner-title {
+    font-size: 45px;
+    text-align: center;
+  }
+
+  .banner-details button {
+    margin: 0 auto;
+  }
+
+  .banner-details .banner-description {
+    font-size: 16px;
+    text-align: center;
+  }
+
+  .banner-image {
+    max-width: 400px;
+  }
+
+  .feature,
+  .instagram {
+    padding: 20px;
+  }
+  .feature-cards {
+    grid-template-columns: repeat(1, 1fr);
+  }
+
+  .delivery {
+    background-color: transparent;
+    gap: 0px;
+  }
+
+  .instagram-images {
+    grid-template-columns: repeat(2, 1fr);
+  }
+
+  footer {
+    margin-top: 20px;
+  }
+}
+
+/* Responsive for Medium Screens (Tablet to Desktop) */
+@media screen and (min-width: 769px) and (max-width: 1439px) {
+  .navbar {
+    margin: 0 20px;
+  }
+
+  .banner,
+  .feature,
+  .delivery,
+  .deal-container,
+  .instagram,
+  .email {
+    margin: 10px 20px;
+  }
+
+  .banner-details .banner-title {
+    font-size: 45px;
+  }
+
+  .banner-details .banner-description {
+    font-size: 16px;
+  }
+
+  .banner-image {
+    max-width: 400px;
+  }
+
+  .feature-cards {
+    grid-template-columns: repeat(2, 1fr);
+  }
+  .instagram-images {
+    grid-template-columns: repeat(2, 1fr);
+    max-width: 800px;
+    margin: 0 auto;
+  }
+
+  .instagram-image img {
+    width: 100%;
+    height: auto;
+    object-fit: cover;
+  }
+
+  footer {
+    margin-top: 20px;
+  }
+}
