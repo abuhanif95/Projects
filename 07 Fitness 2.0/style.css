@@ -1,0 +1,741 @@
+@import url("https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700&display=swap");
+
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+}
+
+body {
+  width: 100%;
+  min-height: 100vh;
+  font-family: "Inter", sans-serif;
+  background-color: black;
+  color: white;
+  overflow-x: hidden;
+}
+
+:root {
+  --primary-color: rgba(234, 63, 143, 0.957);
+  --transition-speed: 0.3s;
+}
+
+.active-nav {
+  background-color: var(--primary-color);
+}
+
+.btn-1 {
+  color: white;
+  border: 1px solid var(--primary-color);
+  background-color: var(--primary-color);
+  cursor: pointer;
+  padding: 12px 25px;
+  border-radius: 5px;
+  font-size: 18px;
+  font-weight: 600;
+}
+
+.btn-1:hover {
+  color: var(--primary-color);
+  border: 1px solid var(--primary-color);
+  background-color: transparent;
+}
+
+.btn-2 {
+  color: var(--primary-color);
+  border: 1px solid var(--primary-color);
+  background-color: transparent;
+  cursor: pointer;
+  padding: 12px 25px;
+  border-radius: 5px;
+  font-size: 18px;
+  font-weight: 600;
+}
+
+.btn-2:hover {
+  color: white;
+  background-color: var(--primary-color);
+}
+
+/* Header section */
+nav {
+  max-width: 1200px;
+  margin: 0 auto;
+  display: flex;
+  justify-content: space-between;
+  padding: 20px;
+  align-items: center;
+  position: relative;
+}
+
+nav .nav-logo,
+footer .footer-logo {
+  font-size: 50px;
+  font-weight: bold;
+  font-family: "Times New Roman", Times, serif;
+  letter-spacing: -2px;
+  color: var(--primary-color);
+  z-index: 1001;
+}
+
+.navbar .nav-logo span,
+.footer .footer-logo span {
+  color: white;
+}
+
+.navbar .nav-links {
+  display: flex;
+  gap: 50px;
+  border: 1px solid var(--primary-color);
+  border-radius: 20px;
+  transition: all var(--transition-speed) ease;
+}
+
+.nav-links .nav-link {
+  list-style: none;
+  width: 100%;
+  height: 100%;
+  padding: 8px 22px;
+  border-radius: 20px;
+  transition: all var(--transition-speed) ease;
+}
+
+.nav-link a {
+  text-decoration: none;
+  color: white;
+  font-size: 16px;
+  font-weight: 500;
+  display: block;
+  width: 100%;
+  height: 100%;
+}
+
+.nav-btn {
+  transition: all var(--transition-speed) ease;
+  z-index: 1001;
+}
+
+/* Main section */
+
+/* Banner Section */
+.banner {
+  max-width: 1200px;
+  margin: 0 auto;
+  display: flex;
+  gap: 50px;
+  justify-content: space-between;
+  align-items: center;
+}
+
+.banner-details {
+  max-width: 50%;
+  display: flex;
+  gap: 25px;
+  flex-direction: column;
+}
+
+.banner-title {
+  font-size: 75px;
+  font-weight: 900;
+}
+
+.banner-description {
+  font-size: 18px;
+  color: rgb(157, 157, 157);
+}
+
+.banner-buttons {
+  display: flex;
+  gap: 20px;
+}
+
+.banner-image {
+  position: relative;
+  max-width: 50%;
+}
+
+.banner-image img {
+  width: 100%;
+}
+
+.banner-tooltip {
+  position: absolute;
+  bottom: 65px;
+  left: -100px;
+  display: flex;
+  justify-content: space-between;
+  gap: 15px;
+  align-items: center;
+  background-color: rgba(99, 99, 99, 0.309);
+  padding: 10px;
+  border-radius: 10px;
+}
+
+.left-tooltip {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  height: 35px;
+  width: 35px;
+  background-color: var(--primary-color);
+  border-radius: 50%;
+}
+
+.right-tooltip {
+  display: flex;
+  gap: 5px;
+  flex-direction: column;
+  text-align: left;
+}
+
+.right-tooltip h3 {
+  font-size: 25px;
+  font-weight: 900;
+}
+
+.right-tooltip p {
+  color: rgb(157, 157, 157);
+}
+
+/* Habit Section */
+.habit {
+  max-width: 1200px;
+  margin: 0 auto;
+  padding-top: 50px;
+  display: flex;
+  flex-direction: column;
+  gap: 35px;
+}
+
+.habit-details {
+  display: flex;
+  flex-direction: column;
+  gap: 20px;
+  text-align: center;
+  max-width: 550px;
+  margin: 0 auto;
+}
+
+.habit-title {
+  font-size: 40px;
+}
+
+.habit-description {
+  font-size: 18px;
+  color: rgb(157, 157, 157);
+}
+
+.habit-cards {
+  display: grid;
+  gap: 30px;
+  grid-template-columns: repeat(4, 1fr);
+}
+
+.habit-card {
+  display: flex;
+  gap: 6px;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+  text-align: center;
+}
+
+.habit-image {
+  height: 180px;
+  width: 180px;
+  border-radius: 50px;
+  margin-bottom: 20px;
+}
+
+.habit-image img {
+  height: 100%;
+  width: 100%;
+  border-radius: 50%;
+}
+
+.habit-card-title {
+  font-size: 22px;
+  color: rgb(210, 210, 210);
+}
+
+.habit-card-description {
+  color: rgb(157, 157, 157);
+}
+
+/* Run Section */
+.run {
+  max-width: 1200px;
+  margin: 70px auto;
+  padding: 30px;
+  display: flex;
+  gap: 70px;
+  justify-content: space-between;
+  align-items: center;
+  background-color: rgba(196, 196, 196, 0.284);
+  border-radius: 10px;
+}
+
+.run-details {
+  display: flex;
+  flex-direction: column;
+  gap: 20px;
+  align-items: flex-start;
+  width: 60%;
+}
+
+.run-title {
+  font-size: 60px;
+}
+
+.run-description {
+  font-size: 18px;
+  color: rgb(157, 157, 157);
+}
+
+.run-image {
+  width: 40%;
+  background-position: center;
+}
+
+.run-image img {
+  width: 100%;
+  border-radius: 10px;
+  object-fit: cover;
+}
+
+/* Training Section */
+.training,
+.team {
+  display: flex;
+  flex-direction: column;
+  gap: 30px;
+  max-width: 1200px;
+  margin: 50px auto;
+}
+
+.training-details,
+.team-details {
+  display: flex;
+  flex-direction: column;
+  gap: 20px;
+  max-width: 500px;
+}
+
+.training-title,
+.team-title {
+  font-size: 40px;
+  color: rgb(210, 210, 210);
+}
+
+.training-description,
+.team-description {
+  color: rgb(157, 157, 157);
+}
+
+.training-images {
+  display: grid;
+  grid-template-columns: repeat(4, 1fr);
+  grid-template-rows: repeat(2, 1fr);
+}
+
+.training-image:nth-child(2),
+.training-image:nth-child(4) {
+  grid-column: span 2;
+}
+
+.training-image {
+  position: relative;
+  overflow: hidden;
+}
+
+.training-image img {
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+}
+
+.training-image::after {
+  content: "";
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+}
+
+.training-image:nth-child(1)::after {
+  background: rgba(80, 227, 200, 0.3);
+}
+
+.training-image:nth-child(2)::after {
+  background: rgba(238, 65, 65, 0.3);
+}
+
+.training-image:nth-child(5)::after {
+  background: rgba(30, 215, 49, 0.38);
+}
+
+.training-image:nth-child(6)::after {
+  background-color: rgba(88, 243, 243, 0.319);
+}
+
+/* Team section */
+.team-details {
+  margin: 0 auto;
+  text-align: center;
+}
+
+.team-images {
+  display: grid;
+  gap: 20px;
+  grid-template-columns: repeat(3, 1fr);
+  grid-template-rows: repeat(2, 1fr);
+  background-color: rgb(38, 38, 38);
+  padding: 20px;
+  border-radius: 10px;
+}
+
+.team-image {
+  position: relative;
+  overflow: hidden;
+}
+
+.team-image img {
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+  border-radius: 10px;
+}
+
+.trainer-details {
+  position: absolute;
+  bottom: 10px;
+  left: 10px;
+}
+
+.trainer-details h3 {
+  font-size: 22px;
+  color: rgb(236, 235, 235);
+}
+
+.trainer-details p {
+  font-size: 18px;
+  color: rgb(173, 172, 172);
+}
+
+/* Footer Section */
+footer {
+  background-color: rgba(62, 62, 62, 0.287);
+}
+
+.footer {
+  max-width: 1200px;
+  margin: 0 auto;
+  display: flex;
+  flex-direction: column;
+  gap: 30px;
+  padding: 50px 20px !important;
+}
+
+.footer-details {
+  display: flex;
+  gap: 30px;
+  justify-content: space-between;
+  align-items: center;
+}
+
+.footer-left {
+  display: flex;
+  flex-direction: column;
+  gap: 25px;
+  width: 50%;
+  margin-right: 100px;
+}
+
+.footer-description {
+  color: rgb(194, 194, 194);
+}
+
+.footer-right {
+  display: flex;
+  justify-content: space-between;
+  gap: 30px;
+  width: 50%;
+}
+
+.footer-right h3 {
+  font-size: 22px;
+  color: rgb(210, 210, 210);
+}
+
+.footer-right div {
+  display: flex;
+  gap: 20px;
+  flex-direction: column;
+}
+
+.footer-links li {
+  font-size: 18px;
+  list-style: none;
+  line-height: 35px;
+  color: rgb(157, 157, 157);
+}
+
+.footer-copyright {
+  text-align: center;
+}
+
+.footer-copyright small {
+  color: rgb(173, 172, 172);
+}
+
+@media screen and (max-width: 850px) {
+  nav,
+  .banner,
+  .run,
+  .training,
+  footer {
+    padding: 15px 20px;
+  }
+  .nav-toggle {
+    display: block;
+    position: absolute;
+    top: 35px;
+    right: 20px;
+    width: 30px;
+    height: 30px;
+    opacity: 0;
+    z-index: 1002;
+    cursor: pointer;
+  }
+
+  .hamburger {
+    display: block;
+    position: absolute;
+    top: 35px;
+    right: 20px;
+    width: 30px;
+    height: 20px;
+    z-index: 1001;
+    cursor: pointer;
+  }
+
+  .hamburger-line {
+    display: block;
+    width: 100%;
+    height: 3px;
+    background-color: var(--primary-color);
+    margin-bottom: 5px;
+    border-radius: 2px;
+    transition: all var(--transition-speed) ease;
+  }
+
+  .navbar .nav-links {
+    position: fixed;
+    top: 0;
+    left: -110%;
+    width: 100%;
+    height: 100%;
+    flex-direction: column;
+    background-color: rgba(0, 0, 0, 0.95);
+    padding: 100px 20px 30px;
+    gap: 20px;
+    border: none;
+    transition: left var(--transition-speed) ease;
+    z-index: 1000;
+    overflow-y: auto;
+  }
+
+  .nav-links .nav-link {
+    width: 100%;
+    height: 60px !important;
+    padding: 15px;
+    border: 1px solid var(--primary-color);
+    background-color: transparent !important;
+    border-radius: 5px;
+    text-align: center;
+  }
+
+  .nav-link a {
+    font-size: 20px;
+  }
+
+  .nav-link:hover {
+    background-color: var(--primary-color) !important;
+  }
+
+  .nav-btn {
+    display: none;
+  }
+
+  .banner {
+    flex-direction: column;
+    width: 100%;
+  }
+
+  .banner-details,
+  .banner-image {
+    max-width: 100%;
+  }
+
+  .banner-details {
+    gap: 30px;
+    justify-content: center;
+    align-items: center;
+    text-align: center;
+  }
+
+  .banner-title {
+    font-size: 65px;
+  }
+
+  .banner-tooltip {
+    bottom: 250px;
+    left: 0;
+  }
+
+  .habit-cards {
+    grid-template-columns: repeat(2, 1fr);
+  }
+
+  .run {
+    display: flex;
+    flex-direction: column;
+    margin: 30px 15px;
+  }
+
+  .run-details,
+  .run-image {
+    width: 100%;
+  }
+
+  .training-images {
+    display: grid;
+    grid-template-columns: repeat(3, 1fr);
+    grid-template-rows: repeat(2, 1fr);
+  }
+
+  .training-image:nth-child(2),
+  .training-image:nth-child(4) {
+    grid-column: span 1;
+  }
+
+  .trainer-details h3 {
+    font-size: 20px;
+    color: rgb(236, 235, 235);
+  }
+
+  .trainer-details p {
+    font-size: 16px;
+    color: rgb(173, 172, 172);
+  }
+
+  .footer-details {
+    flex-direction: column;
+  }
+  .footer-description {
+    text-align: center;
+  }
+
+  .footer-left,
+  .footer-right {
+    max-width: 500px;
+    width: 100%;
+    justify-content: center;
+    align-items: center;
+    margin: 0 auto;
+  }
+}
+
+@media screen and (max-width: 576px) {
+  nav .nav-logo {
+    font-size: 40px;
+  }
+
+  .hamburger {
+    top: 25px;
+  }
+
+  .nav-toggle {
+    top: 25px;
+  }
+
+  .navbar .nav-links {
+    width: 100%;
+  }
+
+  .nav-link {
+    height: 60px !important;
+    width: 100%;
+    background-color: transparent !important;
+  }
+
+  .nav-link:hover {
+    background-color: var(--primary-color) !important;
+  }
+
+  .banner-title {
+    font-size: 55px;
+  }
+  .banner-buttons {
+    flex-direction: column;
+  }
+
+  .habit-cards {
+    grid-template-columns: repeat(1, 1fr);
+  }
+
+  .training-images {
+    display: grid;
+    grid-template-columns: repeat(2, 1fr);
+  }
+
+  .team-images {
+    display: grid;
+    grid-template-columns: repeat(1, 1fr);
+  }
+}
+
+.nav-toggle:checked ~ .nav-links {
+  left: 0;
+}
+
+.nav-toggle:checked ~ .hamburger .hamburger-line:nth-child(1) {
+  transform: rotate(45deg) translate(6px, 6px);
+}
+
+.nav-toggle:checked ~ .hamburger .hamburger-line:nth-child(2) {
+  opacity: 0;
+}
+
+.nav-toggle:checked ~ .hamburger .hamburger-line:nth-child(3) {
+  transform: rotate(-45deg) translate(6px, -6px);
+}
+
+@media screen and (min-width: 851px) {
+  .banner,
+  .training {
+    padding: 0 20px;
+  }
+
+  .hamburger {
+    display: none;
+  }
+
+  .nav-toggle {
+    display: none;
+  }
+
+  .navbar .nav-links {
+    position: static;
+    width: auto;
+    height: auto;
+    flex-direction: row;
+    background-color: transparent;
+    padding: 0;
+  }
+
+  .nav-links .nav-link {
+    border: none;
+  }
+}
