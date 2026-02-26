@@ -1,0 +1,542 @@
+<!doctype html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Job Application Tracker</title>
+    <link rel="stylesheet" href="tailwind.init.css" />
+    <!-- Font Awesome Link -->
+    <link
+      rel="stylesheet"
+      href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.7.2/css/all.min.css"
+    />
+
+    <!-- Daisy UI + Tailwind CSS -->
+    <link
+      href="https://cdn.jsdelivr.net/npm/daisyui@5"
+      rel="stylesheet"
+      type="text/css"
+    />
+    <script src="https://cdn.jsdelivr.net/npm/@tailwindcss/browser@4"></script>
+  </head>
+  <body>
+    <header class="w-[85%] mx-auto pt-6">
+      <h1 class="text-3xl sm:text-4xl font-medium text-neutral mb-4">
+        Job Application Tracker
+      </h1>
+
+      <!-- stats cards -->
+      <div class="grid grid-cols-1 sm:grid-cols-3 gap-8">
+        <div class="bg-base-200 p-4 rounded-md text-2xl shadow-sm">
+          <p class="font-medium">Total</p>
+          <p id="total-count" class="font-bold">0</p>
+        </div>
+
+        <div class="bg-base-200 p-4 rounded-md text-2xl shadow-sm">
+          <p class="font-medium">Interview</p>
+          <p id="interview-count" class="font-bold text-green-500">0</p>
+        </div>
+
+        <div class="bg-base-200 p-4 rounded-md text-2xl shadow-sm">
+          <p class="font-medium">Rejected</p>
+          <p id="rejected-count" class="font-bold text-red-500">0</p>
+        </div>
+      </div>
+    </header>
+
+    <hr class="my-6 w-[85%] mx-auto border-gray-300" />
+
+    <main class="w-[85%] mx-auto pb-12">
+      <div class="my-4 flex justify-between gap-3">
+        <h2 class="font-medium text-xl">Available Jobs</h2>
+        <p><span id="available-job">0 </span>Jobs</p>
+      </div>
+
+      <div class="mb-6 flex gap-3">
+        <button id="all-filter-btn" class="btn bg-primary text-white">
+          All
+        </button>
+        <button id="interview-filter-btn" class="btn bg-base-200">
+          Interview
+        </button>
+        <button id="rejected-filter-btn" class="btn bg-base-200">
+          Rejected
+        </button>
+      </div>
+
+      <section id="filtered-section" class="hidden space-y-4">
+        <div
+          id="no-jobs-available"
+          class="w-full bg-base-200 flex flex-col gap-3 justify-center items-center rounded-md p-10 sm:p-15"
+        >
+          <img src="assets/jobs.png" alt="" />
+          <h2 class="text-xl font-medium text-center">No Jobs available</h2>
+          <p class="text-center">Check back soon for new job opportunities</p>
+        </div>
+      </section>
+
+      <section id="all-jobs-cards" class="space-y-4">
+        <!-- Card 1 - Mobile First Corp -->
+        <div
+          class="card flex flex-col sm:flex-row justify-between items-start border border-gray-200 p-6 rounded-xl bg-white shadow-sm"
+        >
+          <div class="space-y-3">
+            <div>
+              <p class="company-name text-2xl font-medium text-gray-800">
+                Mobile First Corp
+              </p>
+              <p class="job-position text-gray-500">React Native Developer</p>
+            </div>
+
+            <div
+              class="flex flex-wrap gap-2 text-[13px] text-gray-500 font-normal"
+            >
+              <span class="company-location">San Francisco, CA</span>
+              <span>•</span>
+              <span class="job-type">Remote</span>
+              <span>•</span>
+              <span class="job-salary">$13,000 - $17,500</span>
+            </div>
+
+            <button
+              class="job-status-btn bg-gray-100 px-4 py-2 rounded-lg text-sm font-medium"
+            >
+              Not Applied
+            </button>
+
+            <p class="job-description text-gray-800">
+              Build Cross-platform mobile applications using React Native. Work
+              on products used by millions of users worldwide.
+            </p>
+
+            <div class="flex gap-3 py-3">
+              <button
+                class="interview-btn bg-green-100 hover:bg-green-200 text-green-700 px-5 py-2 rounded-lg text-sm font-medium"
+              >
+                INTERVIEW
+              </button>
+              <button
+                class="rejected-btn bg-red-100 hover:bg-red-200 text-red-700 px-5 py-2 rounded-lg text-sm font-medium"
+              >
+                REJECTED
+              </button>
+            </div>
+          </div>
+
+          <div class="self-start mt-2 sm:mt-0">
+            <button
+              class="delete-btn btn rounded-md sm:w-8 sm:h-8 sm:rounded-full flex items-center justify-center"
+            >
+              <i class="fas fa-trash-alt"></i
+              ><span class="sm:hidden">Delete</span>
+            </button>
+          </div>
+        </div>
+
+        <!-- Card 2 - CloudTech Solutions -->
+        <div
+          class="card flex flex-col sm:flex-row justify-between items-start border border-gray-200 p-6 rounded-xl bg-white shadow-sm"
+        >
+          <div class="space-y-3">
+            <div>
+              <p class="company-name text-2xl font-medium text-gray-800">
+                CloudTech Solutions
+              </p>
+              <p class="job-position text-gray-500">
+                Senior Frontend Developer
+              </p>
+            </div>
+
+            <div
+              class="flex flex-wrap gap-2 text-[13px] text-gray-500 font-normal"
+            >
+              <span class="company-location">Austin, TX</span>
+              <span>•</span>
+              <span class="job-type">Hybrid</span>
+              <span>•</span>
+              <span class="job-salary">$15,000 - $20,000</span>
+            </div>
+
+            <button
+              class="job-status-btn bg-gray-100 px-4 py-2 rounded-lg text-sm font-medium"
+            >
+              Not Applied
+            </button>
+
+            <p class="job-description text-gray-800">
+              Lead the development of cloud-based dashboard applications using
+              React and TypeScript. Mentor junior developers.
+            </p>
+
+            <div class="flex gap-3 py-3">
+              <button
+                class="interview-btn bg-green-100 hover:bg-green-200 text-green-700 px-5 py-2 rounded-lg text-sm font-medium"
+              >
+                INTERVIEW
+              </button>
+              <button
+                class="rejected-btn bg-red-100 hover:bg-red-200 text-red-700 px-5 py-2 rounded-lg text-sm font-medium"
+              >
+                REJECTED
+              </button>
+            </div>
+          </div>
+
+          <div class="self-start mt-2 sm:mt-0">
+            <button
+              class="delete-btn btn rounded-md sm:w-8 sm:h-8 sm:rounded-full flex items-center justify-center"
+            >
+              <i class="fas fa-trash-alt"></i
+              ><span class="sm:hidden">Delete</span>
+            </button>
+          </div>
+        </div>
+
+        <!-- Card 3 - DataViz Analytics -->
+        <div
+          class="card flex flex-col sm:flex-row justify-between items-start border border-gray-200 p-6 rounded-xl bg-white shadow-sm"
+        >
+          <div class="space-y-3">
+            <div>
+              <p class="company-name text-2xl font-medium text-gray-800">
+                DataViz Analytics
+              </p>
+              <p class="job-position text-gray-500">Full Stack Engineer</p>
+            </div>
+
+            <div
+              class="flex flex-wrap gap-2 text-[13px] text-gray-500 font-normal"
+            >
+              <span class="company-location">New York, NY</span>
+              <span>•</span>
+              <span class="job-type">Remote</span>
+              <span>•</span>
+              <span class="job-salary">$14,000 - $18,500</span>
+            </div>
+
+            <button
+              class="job-status-btn bg-gray-100 px-4 py-2 rounded-lg text-sm font-medium"
+            >
+              Not Applied
+            </button>
+
+            <p class="job-description text-gray-800">
+              Build data visualization tools using Node.js, React, and D3. Work
+              with big data pipelines and real-time analytics.
+            </p>
+
+            <div class="flex gap-3 py-3">
+              <button
+                class="interview-btn bg-green-100 hover:bg-green-200 text-green-700 px-5 py-2 rounded-lg text-sm font-medium"
+              >
+                INTERVIEW
+              </button>
+              <button
+                class="rejected-btn bg-red-100 hover:bg-red-200 text-red-700 px-5 py-2 rounded-lg text-sm font-medium"
+              >
+                REJECTED
+              </button>
+            </div>
+          </div>
+
+          <div class="self-start mt-2 sm:mt-0">
+            <button
+              class="delete-btn btn rounded-md sm:w-8 sm:h-8 sm:rounded-full flex items-center justify-center"
+            >
+              <i class="fas fa-trash-alt"></i
+              ><span class="sm:hidden">Delete</span>
+            </button>
+          </div>
+        </div>
+
+        <!-- Card 4 - FinTech Innovations -->
+        <div
+          class="card flex flex-col sm:flex-row justify-between items-start border border-gray-200 p-6 rounded-xl bg-white shadow-sm"
+        >
+          <div class="space-y-3">
+            <div>
+              <p class="company-name text-2xl font-medium text-gray-800">
+                FinTech Innovations
+              </p>
+              <p class="job-position text-gray-500">Backend Developer</p>
+            </div>
+
+            <div
+              class="flex flex-wrap gap-2 text-[13px] text-gray-500 font-normal"
+            >
+              <span class="company-location">Chicago, IL</span>
+              <span>•</span>
+              <span class="job-type">On-site</span>
+              <span>•</span>
+              <span class="job-salary">$12,500 - $16,000</span>
+            </div>
+
+            <button
+              class="job-status-btn bg-gray-100 px-4 py-2 rounded-lg text-sm font-medium"
+            >
+              Not Applied
+            </button>
+
+            <p class="job-description text-gray-800">
+              Design and implement scalable microservices for financial
+              transactions using Java Spring Boot and PostgreSQL.
+            </p>
+
+            <div class="flex gap-3 py-3">
+              <button
+                class="interview-btn bg-green-100 hover:bg-green-200 text-green-700 px-5 py-2 rounded-lg text-sm font-medium"
+              >
+                INTERVIEW
+              </button>
+              <button
+                class="rejected-btn bg-red-100 hover:bg-red-200 text-red-700 px-5 py-2 rounded-lg text-sm font-medium"
+              >
+                REJECTED
+              </button>
+            </div>
+          </div>
+
+          <div class="self-start mt-2 sm:mt-0">
+            <button
+              class="delete-btn btn rounded-md sm:w-8 sm:h-8 sm:rounded-full flex items-center justify-center"
+            >
+              <i class="fas fa-trash-alt"></i
+              ><span class="sm:hidden">Delete</span>
+            </button>
+          </div>
+        </div>
+
+        <!-- Card 5 - HealthTech Solutions -->
+        <div
+          class="card flex flex-col sm:flex-row justify-between items-start border border-gray-200 p-6 rounded-xl bg-white shadow-sm"
+        >
+          <div class="space-y-3">
+            <div>
+              <p class="company-name text-2xl font-medium text-gray-800">
+                HealthTech Solutions
+              </p>
+              <p class="job-position text-gray-500">DevOps Engineer</p>
+            </div>
+
+            <div
+              class="flex flex-wrap gap-2 text-[13px] text-gray-500 font-normal"
+            >
+              <span class="company-location">Seattle, WA</span>
+              <span>•</span>
+              <span class="job-type">Remote</span>
+              <span>•</span>
+              <span class="job-salary">$16,000 - $21,000</span>
+            </div>
+
+            <button
+              class="job-status-btn bg-gray-100 px-4 py-2 rounded-lg text-sm font-medium"
+            >
+              Not Applied
+            </button>
+
+            <p class="job-description text-gray-800">
+              Manage AWS infrastructure, implement CI/CD pipelines, and ensure
+              HIPAA compliance for healthcare applications.
+            </p>
+
+            <div class="flex gap-3 py-3">
+              <button
+                class="interview-btn bg-green-100 hover:bg-green-200 text-green-700 px-5 py-2 rounded-lg text-sm font-medium"
+              >
+                INTERVIEW
+              </button>
+              <button
+                class="rejected-btn bg-red-100 hover:bg-red-200 text-red-700 px-5 py-2 rounded-lg text-sm font-medium"
+              >
+                REJECTED
+              </button>
+            </div>
+          </div>
+
+          <div class="self-start mt-2 sm:mt-0">
+            <button
+              class="delete-btn btn rounded-md sm:w-8 sm:h-8 sm:rounded-full flex items-center justify-center"
+            >
+              <i class="fas fa-trash-alt"></i
+              ><span class="sm:hidden">Delete</span>
+            </button>
+          </div>
+        </div>
+
+        <!-- Card 6 - E-Commerce Giants -->
+        <div
+          class="card flex flex-col sm:flex-row justify-between items-start border border-gray-200 p-6 rounded-xl bg-white shadow-sm"
+        >
+          <div class="space-y-3">
+            <div>
+              <p class="company-name text-2xl font-medium text-gray-800">
+                E-Commerce Giants
+              </p>
+              <p class="job-position text-gray-500">UI/UX Designer</p>
+            </div>
+
+            <div
+              class="flex flex-wrap gap-2 text-[13px] text-gray-500 font-normal"
+            >
+              <span class="company-location">Los Angeles, CA</span>
+              <span>•</span>
+              <span class="job-type">Hybrid</span>
+              <span>•</span>
+              <span class="job-salary">$11,000 - $15,000</span>
+            </div>
+
+            <button
+              class="job-status-btn bg-gray-100 px-4 py-2 rounded-lg text-sm font-medium"
+            >
+              Not Applied
+            </button>
+
+            <p class="job-description text-gray-800">
+              Design intuitive user interfaces for mobile shopping apps. Conduct
+              user research and create wireframes and prototypes.
+            </p>
+
+            <div class="flex gap-3 py-3">
+              <button
+                class="interview-btn bg-green-100 hover:bg-green-200 text-green-700 px-5 py-2 rounded-lg text-sm font-medium"
+              >
+                INTERVIEW
+              </button>
+              <button
+                class="rejected-btn bg-red-100 hover:bg-red-200 text-red-700 px-5 py-2 rounded-lg text-sm font-medium"
+              >
+                REJECTED
+              </button>
+            </div>
+          </div>
+
+          <div class="self-start mt-2 sm:mt-0">
+            <button
+              class="delete-btn btn rounded-md sm:w-8 sm:h-8 sm:rounded-full flex items-center justify-center"
+            >
+              <i class="fas fa-trash-alt"></i
+              ><span class="sm:hidden">Delete</span>
+            </button>
+          </div>
+        </div>
+
+        <!-- Card 7 - AI Startups Inc -->
+        <div
+          class="card flex flex-col sm:flex-row justify-between items-start border border-gray-200 p-6 rounded-xl bg-white shadow-sm"
+        >
+          <div class="space-y-3">
+            <div>
+              <p class="company-name text-2xl font-medium text-gray-800">
+                AI Startups Inc
+              </p>
+              <p class="job-position text-gray-500">
+                Machine Learning Engineer
+              </p>
+            </div>
+
+            <div
+              class="flex flex-wrap gap-2 text-[13px] text-gray-500 font-normal"
+            >
+              <span class="company-location">Boston, MA</span>
+              <span>•</span>
+              <span class="job-type">Remote</span>
+              <span>•</span>
+              <span class="job-salary">$18,000 - $24,000</span>
+            </div>
+
+            <button
+              class="job-status-btn bg-gray-100 px-4 py-2 rounded-lg text-sm font-medium"
+            >
+              Not Applied
+            </button>
+
+            <p class="job-description text-gray-800">
+              Develop and deploy machine learning models for natural language
+              processing. Work with Python, TensorFlow, and PyTorch.
+            </p>
+
+            <div class="flex gap-3 py-3">
+              <button
+                class="interview-btn bg-green-100 hover:bg-green-200 text-green-700 px-5 py-2 rounded-lg text-sm font-medium"
+              >
+                INTERVIEW
+              </button>
+              <button
+                class="rejected-btn bg-red-100 hover:bg-red-200 text-red-700 px-5 py-2 rounded-lg text-sm font-medium"
+              >
+                REJECTED
+              </button>
+            </div>
+          </div>
+
+          <div class="self-start mt-2 sm:mt-0">
+            <button
+              class="delete-btn btn rounded-md sm:w-8 sm:h-8 sm:rounded-full flex items-center justify-center"
+            >
+              <i class="fas fa-trash-alt"></i
+              ><span class="sm:hidden">Delete</span>
+            </button>
+          </div>
+        </div>
+
+        <!-- Card 8 - Gaming Studio -->
+        <div
+          class="card flex flex-col sm:flex-row justify-between items-start border border-gray-200 p-6 rounded-xl bg-white shadow-sm"
+        >
+          <div class="space-y-3">
+            <div>
+              <p class="company-name text-2xl font-medium text-gray-800">
+                Gaming Studio
+              </p>
+              <p class="job-position text-gray-500">Unity Developer</p>
+            </div>
+
+            <div
+              class="flex flex-wrap gap-2 text-[13px] text-gray-500 font-normal"
+            >
+              <span class="company-location">Austin, TX</span>
+              <span>•</span>
+              <span class="job-type">On-site</span>
+              <span>•</span>
+              <span class="job-salary">$14,000 - $19,000</span>
+            </div>
+
+            <button
+              class="job-status-btn bg-gray-100 px-4 py-2 rounded-lg text-sm font-medium"
+            >
+              Not Applied
+            </button>
+
+            <p class="job-description text-gray-800">
+              Create immersive mobile games using Unity and C#. Implement game
+              mechanics, optimize performance, and collaborate with artists.
+            </p>
+
+            <div class="flex gap-3 py-3">
+              <button
+                class="interview-btn bg-green-100 hover:bg-green-200 text-green-700 px-5 py-2 rounded-lg text-sm font-medium"
+              >
+                INTERVIEW
+              </button>
+              <button
+                class="rejected-btn bg-red-100 hover:bg-red-200 text-red-700 px-5 py-2 rounded-lg text-sm font-medium"
+              >
+                REJECTED
+              </button>
+            </div>
+          </div>
+
+          <div class="self-start mt-2 sm:mt-0">
+            <button
+              class="delete-btn btn rounded-md sm:w-8 sm:h-8 sm:rounded-full flex items-center justify-center"
+            >
+              <i class="fas fa-trash-alt"></i
+              ><span class="sm:hidden">Delete</span>
+            </button>
+          </div>
+        </div>
+      </section>
+    </main>
+    <script src="Js/script.js"></script>
+  </body>
+</html>
