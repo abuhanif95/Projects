@@ -1,0 +1,114 @@
+@import "tailwindcss";
+
+.primary-color {
+  color: #4ade80;
+}
+
+.btn-primary {
+  background-color: #4ade80;
+  color: white;
+  border: none;
+}
+
+#trees-container {
+  max-height: 800px;
+  overflow-y: auto;
+  padding-right: 8px;
+}
+
+#trees-container::-webkit-scrollbar {
+  width: 6px;
+}
+
+#trees-container::-webkit-scrollbar-track {
+  background: #e2e8f0;
+  border-radius: 10px;
+}
+
+#trees-container::-webkit-scrollbar-thumb {
+  background: #4ade80;
+  border-radius: 10px;
+}
+
+#trees-container::-webkit-scrollbar-thumb:hover {
+  background: #22c55e;
+}
+
+/* Hide scrollbar for categories on mobile but keep functionality */
+#categories-container {
+  display: flex;
+  flex-direction: row;
+  gap: 0.75rem;
+}
+
+@media (min-width: 1024px) {
+  #categories-container {
+    flex-direction: column;
+  }
+}
+
+#categories-container::-webkit-scrollbar {
+  display: none;
+}
+
+#categories-container {
+  -ms-overflow-style: none;
+  scrollbar-width: none;
+}
+
+#cart-container {
+  max-height: 400px;
+  overflow-y: auto;
+  padding-right: 8px;
+}
+
+#cart-container::-webkit-scrollbar {
+  width: 4px;
+}
+
+#cart-container::-webkit-scrollbar-track {
+  background: #e2e8f0;
+  border-radius: 10px;
+}
+
+#cart-container::-webkit-scrollbar-thumb {
+  background: #4ade80;
+  border-radius: 10px;
+}
+
+/* Ensure categories buttons are visible on mobile */
+@media (max-width: 1023px) {
+  .flex-row {
+    flex-direction: row !important;
+    overflow-x: auto;
+    padding-bottom: 0.75rem;
+  }
+  
+  #categories-container {
+    flex-direction: row !important;
+  }
+  
+  #categories-container .btn {
+    flex-shrink: 0;
+  }
+  
+  .grid {
+    gap: 1.5rem;
+  }
+  
+  .card-body {
+    padding: 1.25rem;
+  }
+}
+
+/* Smooth scrolling */
+html {
+  scroll-behavior: smooth;
+  scroll-padding-top: 80px;
+}
+
+/* Active nav link style */
+.nav-link.active {
+  background-color: #166534;
+  border-radius: 0.5rem;
+}

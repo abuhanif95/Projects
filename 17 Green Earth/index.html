@@ -1,0 +1,293 @@
+<!doctype html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Green Earth</title>
+
+    <!-- Tailwind and Daisy UI CDN -->
+    <link
+      href="https://cdn.jsdelivr.net/npm/daisyui@5"
+      rel="stylesheet"
+      type="text/css"
+    />
+
+    <script src="https://cdn.jsdelivr.net/npm/@tailwindcss/browser@4"></script>
+    <link rel="stylesheet" href="./style.css" />
+  </head>
+  <body>
+    <header>
+      <nav class="bg-green-800">
+        <div
+          class="navbar w-full sm:w-11/12 sm:mx-auto text-white shadow-sm px-2 sm:px-5"
+        >
+          <div class="navbar-start">
+            <div class="dropdown">
+              <div
+                tabindex="0"
+                role="button"
+                class="btn btn-ghost lg:hidden text-white hover:bg-green-800"
+              >
+                <svg
+                  xmlns="http://www.w3.org/2000/svg"
+                  class="h-5 w-5"
+                  fill="none"
+                  viewBox="0 0 24 24"
+                  stroke="currentColor"
+                >
+                  <path
+                    stroke-linecap="round"
+                    stroke-linejoin="round"
+                    stroke-width="2"
+                    d="M4 6h16M4 12h8m-8 6h16"
+                  />
+                </svg>
+              </div>
+              <ul
+                tabindex="0"
+                class="menu menu-sm dropdown-content bg-base-200 text-black font-medium rounded-box z-[100] space-y-1 w-52 p-2 shadow mt-3"
+              >
+                <li>
+                  <a href="#home" class="hover:bg-green-700 hover:text-white"
+                    >Home</a
+                  >
+                </li>
+                <li>
+                  <a href="#trees" class="hover:bg-green-700 hover:text-white"
+                    >Trees</a
+                  >
+                </li>
+                <li>
+                  <a href="#cart" class="hover:bg-green-700 hover:text-white"
+                    >Cart</a
+                  >
+                </li>
+              </ul>
+            </div>
+            <a
+              href="#home"
+              class="text-4xl font-bold text-white tracking-normal scroll-link"
+              >🌱S<span class="text-warning">H</span>T</a
+            >
+          </div>
+
+          <div class="navbar-center hidden lg:flex">
+            <ul class="menu menu-horizontal px-1 gap-4 text-[18px] font-medium">
+              <li>
+                <a
+                  href="#home"
+                  class="text-white hover:bg-green-800 hover:text-white scroll-link"
+                  >Home</a
+                >
+              </li>
+              <li>
+                <a
+                  href="#trees"
+                  class="text-white hover:bg-green-800 hover:text-white scroll-link"
+                  >Trees</a
+                >
+              </li>
+              <li>
+                <a
+                  href="#cart"
+                  class="text-white hover:bg-green-800 hover:text-white scroll-link"
+                  >Cart</a
+                >
+              </li>
+            </ul>
+          </div>
+
+          <div class="navbar-end">
+            <a
+              href="#trees"
+              class="btn btn-warning text-green-950 border-0 font-semibold text-base scroll-link"
+            >
+              🌳 Plant a tree
+            </a>
+          </div>
+        </div>
+      </nav>
+
+      <div id="home" class="hero bg-green-200 scroll-mt-16">
+        <div
+          class="hero-content w-11/12 mx-auto grid grid-cols-1 md:grid-cols-4 gap-8 p-0 mt-10"
+        >
+          <img
+            src="./assets/hero-leaf1.png"
+            class="hidden md:block md:col-span-1 h-full w-full"
+            alt="leaf decoration"
+          />
+
+          <div
+            class="w-full text-center flex flex-col justify-center items-center md:col-span-2"
+          >
+            <h1 class="text-3xl sm:text-4xl font-bold leading-tight">
+              Plant a Tree, Grow a Future
+            </h1>
+            <p class="my-4 text-gray-700 text-[18px]">
+              Join our mission to plant 1 million trees and make the Earth
+              greener for future generations.
+            </p>
+            <a
+              href="#trees"
+              class="btn btn-warning text-green-950 border-0 font-semibold text-base mb-10 scroll-link"
+            >
+              Get Involved
+            </a>
+          </div>
+
+          <img
+            src="./assets/hero-leaf2.png"
+            class="hidden md:block md:col-span-1 h-full w-full"
+            alt="leaf decoration"
+          />
+        </div>
+      </div>
+    </header>
+
+    <main class="bg-green-100">
+      <div class="w-11/12 mx-auto pt-16">
+        <h2 class="text-green-800 font-bold text-4xl text-center mb-12">
+          Choose your Trees
+        </h2>
+
+        <div class="grid grid-cols-1 lg:grid-cols-12 gap-8">
+          <div
+            class="bg-base-200 card card-body shadow-xl shadow-green-950 col-span-1 lg:col-span-3"
+          >
+            <h2 class="font-bold text-2xl">Categories</h2>
+            <!-- Fixed: Make sure this container allows horizontal scroll on mobile -->
+            <div
+              class="w-full overflow-x-auto pb-3 lg:pb-0"
+              style="scrollbar-width: none; -ms-overflow-style: none"
+            >
+              <div
+                class="flex flex-row lg:flex-col gap-3 min-w-max lg:min-w-full"
+                id="categories-container"
+              >
+                <!-- Static All Trees button -->
+                <button
+                  class="btn btn-success flex-shrink-0 lg:w-full"
+                  id="all-trees-btn"
+                >
+                  All Trees
+                </button>
+                <!-- Dynamic categories will be added here by JavaScript -->
+              </div>
+            </div>
+          </div>
+
+          <div
+            id="trees"
+            class="card card-body shadow-2xl col-span-1 lg:col-span-6 scroll-mt-20"
+          >
+            <div
+              id="trees-container"
+              class="grid grid-cols-1 sm:grid-cols-2 gap-6 max-h-[800px] overflow-y-auto pr-2"
+            >
+              <div
+                id="loading-spinner"
+                class="h-[60vh] hidden flex justify-center items-center col-span-full"
+              >
+                <span class="loading loading-dots loading-xl"></span>
+              </div>
+            </div>
+          </div>
+
+          <div
+            id="cart"
+            class="card card-body shadow-2xl col-span-1 lg:col-span-3 bg-white scroll-mt-20"
+          >
+            <h2 class="font-bold text-3xl mb-2">Cart</h2>
+
+            <div class="space-y-4">
+              <div
+                id="cart-container"
+                class="space-y-4 max-h-[400px] overflow-y-auto pr-2"
+              ></div>
+
+              <div id="empty-cart-message" class="text-center py-4">
+                <p>Your cart is Empty</p>
+                <p>Add trees to get started</p>
+              </div>
+
+              <div
+                class="flex justify-between items-center bg-green-50 rounded-lg p-4 my-3 font-bold"
+              >
+                <span>Total:</span>
+                <span id="total-price">$0</span>
+              </div>
+            </div>
+          </div>
+        </div>
+
+        <dialog id="tree-details-modal" class="modal">
+          <div class="modal-box">
+            <div class="flex justify-between items-start mb-4">
+              <h3 class="font-bold text-2xl text-green-700" id="modalTitle">
+                Tree Details
+              </h3>
+              <button
+                class="btn btn-sm btn-circle btn-ghost"
+                onclick="document.getElementById('tree-details-modal').close()"
+              >
+                X
+              </button>
+            </div>
+
+            <div class="gap-6">
+              <img
+                src=""
+                alt="plant"
+                class="w-full h-[250px]! object-cover rounded-lg mb-12"
+                id="modalImage"
+              />
+
+              <div>
+                <p class="text-sm text-gray-500 mb-2">
+                  <span class="font-bold">Category:</span>
+                  <span id="modalCategory" class="badge badge-primary"></span>
+                </p>
+
+                <p class="text-sm text-gray-600 mb-4">
+                  <span id="modalDescription"></span>
+                </p>
+                <div class="flex items-baseline gap-2 mb-6">
+                  <span class="text-3xl font-bold text-green-600"
+                    >$<span id="modalPrice">0</span></span
+                  >
+                </div>
+              </div>
+            </div>
+            <div class="modal-action">
+              <form method="dialog">
+                <button class="btn">Close</button>
+              </form>
+            </div>
+          </div>
+        </dialog>
+      </div>
+    </main>
+
+    <script src="script.js"></script>
+
+    <script>
+      // Add smooth scrolling to all nav links
+      document.querySelectorAll(".scroll-link").forEach((link) => {
+        link.addEventListener("click", function (e) {
+          e.preventDefault();
+          const href = this.getAttribute("href");
+          if (href === "#") return;
+
+          const targetElement = document.querySelector(href);
+          if (targetElement) {
+            targetElement.scrollIntoView({
+              behavior: "smooth",
+              block: "start",
+            });
+          }
+        });
+      });
+    </script>
+  </body>
+</html>
